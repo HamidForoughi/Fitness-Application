@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/fonts/fonts";
+@import "assets/scss/bootstrap-rtl.css";
+
+body {
+  font-family: Vazir, serif;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+.rtl {
+  direction: rtl;
+}
