@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "start": "npm run buildrtl && ng serve",
+    "build": "npm run buildrtl && ng build",
+    "watch": "npm run buildrtl && ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:Fitness-Application": "node dist/fitness-application/server/server.mjs"
+    "serve:ssr:Fitness-Application": "node dist/fitness-application/server/server.mjs",
+    "buildrtl": "sass src/assets/scss && rtlcss src/assets/scss/bootstrap-ltr.css src/assets/scss/bootstrap-rtl.css"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,8 @@
     "@angular/platform-server": "^18.0.0",
     "@angular/router": "^18.0.0",
     "@angular/ssr": "^18.0.4",
+    "@ng-bootstrap/ng-bootstrap": "^17.0.0",
+    "bootstrap": "^5.3.3",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -39,6 +42,22 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.4.2"
+    "typescript": "~5.4.2",
+    "sass": "^1.77.5"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": [],
+      "useCalc": false,
+      "aliases": {}
+    },
+    "plugins": [],
+    "map": false
   }
 }
