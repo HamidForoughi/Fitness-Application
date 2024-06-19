@@ -4,6 +4,7 @@ import {AuthComponent} from "./auth.component";
 import {queryParameterResolver} from "../core/resolvers/query-parameter.resolver";
 import {LoginComponent} from "./components/login/login.component";
 import {IsGuestGuard} from "./guards/is-guest.guard";
+import {SignupComponent} from "./components/signup/signup.component";
 
 
 const routes: Routes = [
@@ -16,7 +17,13 @@ const routes: Routes = [
         canActivate: [IsGuestGuard],
         component: LoginComponent,
         data: {
-          title: 'ورود و ثبت‌نام'
+          title: 'ورود'
+        }
+      },
+      {
+        path: 'signup', component: SignupComponent,
+        data: {
+          title: 'ثبت‌نام'
         }
       }
     ]
